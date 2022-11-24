@@ -1,0 +1,23 @@
+{
+  "name": "backend-for-sdn-controler",
+  "version": "1.0.0",
+  "description": "Backend for sdn-controller",
+  "main": "app.js",
+  "scripts": {
+    "server": "node app.js",
+    "watch": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Termitsforge/Backend-for-SDN-controler.git"
+  },
+  "author": "Egor Orekhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Termitsforge/Backend-for-SDN-controler/issues"
+  },
+  "homepage": "https://github.com/Termitsforge/Backend-for-SDN-controler#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
