@@ -3,6 +3,7 @@
  * Главная задача определить входящий запрос и перенаправить на нужный обработчик.
  */
 const runCommand = require("./runCommand");
+const {getHosts, getSwitches} = require("./postgresql");
 module.exports = class httpListener {
     constructor() {
         this.returnObject;
@@ -19,6 +20,23 @@ module.exports = class httpListener {
             res.setHeader("200", "Content-Type", 'application/json')
             res.end(JSON.stringify(this.returnObject));
         };
+
+        if (req.url === "/getHosts") {
+            getHosts().then(response => {
+                res.setHeader("200", "Content-Type", 'application/json')
+                res.end(JSON.stringify(response));
+            })
+            
+        }
+
+        if (req.url === "/getSwitches") {
+            getSwitches().then(response => {
+                res.setHeader("200", "Content-Type", 'application/json')
+                res.end(JSON.stringify(response));
+            })
+            
+        }
+
     }
 
 }
